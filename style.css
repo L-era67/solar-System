@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.back-image {
+  background-image: url("./image/galaxy.webp");
+  width: 100vw;
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.images {
+  background: var(--image) no-repeat center/cover;
+}
+
+.position {
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.sun {
+  width: 100px;
+  height: 100px;
+  /* background-color: aqua; */
+}
+
+.solar-system {
+  /* background: #000; */
+  position: relative;
+}
+
+.planet {
+  width: var(--planet-size);
+  height: var(--planet-size);
+  /* background-color: aqua; */
+  top: 0;
+  animation: orbit-animation var(--planet-ani-period) infinite linear;
+}
+
+.orbit {
+  width: var(--orbit-size);
+  height: var(--orbit-size);
+  border: 1px dashed #ffffff;
+  border-radius: 50%;
+  animation: orbit-animation var(--orbit-ani-period) infinite linear;
+}
+
+@keyframes orbit-animation {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
